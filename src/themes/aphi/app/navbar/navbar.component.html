@@ -11,17 +11,17 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 h-100">
 		<li class="nav-item d-flex align-items-center">
           <div class="text-md-center">
-            <a href="https://rdmc.aphi.gov.et" class="nav-link">Home</a>
+            <a  routerLink="/home" class="nav-link">Home</a>
           </div>
 		</li>
 		<li class="nav-item d-flex align-items-center">
           <div class="text-md-center">
-            <a href="https://rdmc.aphi.gov.et/browse/subject" class="nav-link">Keywords</a>
+            <a href="/browse/subject" class="nav-link">Keywords</a>
           </div>
 		</li>
 		<li class="nav-item d-flex align-items-center">
           <div class="text-md-center">
-            <a href="https://rdmc.aphi.gov.et/search?query=" class="nav-link">Datasets</a>
+            <a href="/search?query=" class="nav-link">Datasets</a>
           </div>
 		</li>
 		<li class="nav-item d-flex align-items-center">
@@ -31,14 +31,24 @@
 		</li>
 		<li class="nav-item d-flex align-items-center">
           <div class="text-md-center">
-            <a href="https://aphi.gov.et/#/publications" class="nav-link" target="blank">Publication</a>
+            <a href="/collections/36546ba1-d7ad-4117-a01f-5cd95f07ec33" class="nav-link" target="blank">Publication</a>
           </div>
 		</li>
-		<!--
-        <ng-container *ngFor="let section of (sections | async)">
+		<li class="nav-item d-flex align-items-center">
+          <div class="text-md-center">
+            <a href="/community-list" class="nav-link">Communities & Collections</a>
+          </div>
+		</li>
+		<li class="nav-item d-flex align-items-center">
+          <div class="text-md-center">
+            <a href="/statistics" class="nav-link">Statistics</a>
+          </div>
+		</li>
+		
+        <!--ng-container *ngFor="let section of (sections | async)">
           <ng-container *ngComponentOutlet="(sectionMap$ | async).get(section.id)?.component; injector: (sectionMap$ | async).get(section.id)?.injector;"></ng-container>
-        </ng-container>
-		-->
+        </ng-container-->
+		
       </ul>
     </div>
     <ds-search-navbar class="navbar-collapsed"></ds-search-navbar>
