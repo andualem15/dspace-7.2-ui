@@ -1,0 +1,59 @@
+<nav [ngClass]="{'open': !(menuCollapsed | async)}" [@slideMobileNav]="!(windowService.isXsOrSm() | async) ? 'default' : ((menuCollapsed | async) ? 'collapsed' : 'expanded')"
+  class="navbar navbar-expand-md navbar-light p-0 navbar-container" role="navigation" [attr.aria-label]="'nav.main.description' | translate">
+  <div class="container h-100">
+    <a class="navbar-brand my-2" routerLink="/home">
+      <img src="assets/images/aphi-logo.svg" [attr.alt]="'menu.header.image.logo' | translate" />
+    </a>
+	<!--span>ክልላዊ የጤና መረጃ አስተዳደር፣ ቅመራና ትንተና ማዕከል</span><br>
+	<span>Regional Data Management Center for Health (RDMC)</span-->
+
+    <div id="collapsingNav" class="w-100 h-100">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 h-100">
+		<li class="nav-item d-flex align-items-center">
+          <div class="text-md-center">
+            <a  routerLink="/home" class="nav-link">Home</a>
+          </div>
+		</li>
+		<li class="nav-item d-flex align-items-center">
+          <div class="text-md-center">
+            <a href="/browse/subject" class="nav-link">Keywords</a>
+          </div>
+		</li>
+		<li class="nav-item d-flex align-items-center">
+          <div class="text-md-center">
+            <a href="/search?query=" class="nav-link">Datasets</a>
+          </div>
+		</li>
+		<li class="nav-item d-flex align-items-center">
+          <div class="text-md-center">
+            <a href="https://aphi.gov.et/#/resource/guideline" class="nav-link" target="blank">Datasharing</a>
+          </div>
+		</li>
+		<li class="nav-item d-flex align-items-center">
+          <div class="text-md-center">
+            <a href="/collections/36546ba1-d7ad-4117-a01f-5cd95f07ec33" class="nav-link" target="blank">Publication</a>
+          </div>
+		</li>
+		<li class="nav-item d-flex align-items-center">
+          <div class="text-md-center">
+            <a href="/community-list" class="nav-link">Communities & Collections</a>
+          </div>
+		</li>
+		<li class="nav-item d-flex align-items-center">
+          <div class="text-md-center">
+            <a href="/statistics" class="nav-link">Statistics</a>
+          </div>
+		</li>
+		
+        <!--ng-container *ngFor="let section of (sections | async)">
+          <ng-container *ngComponentOutlet="(sectionMap$ | async).get(section.id)?.component; injector: (sectionMap$ | async).get(section.id)?.injector;"></ng-container>
+        </ng-container-->
+		
+      </ul>
+    </div>
+    <ds-search-navbar class="navbar-collapsed"></ds-search-navbar>
+    <ds-lang-switch class="navbar-collapsed"></ds-lang-switch>
+    <ds-auth-nav-menu class="navbar-collapsed"></ds-auth-nav-menu>
+    <ds-impersonate-navbar class="navbar-collapsed"></ds-impersonate-navbar>
+  </div>
+</nav>
